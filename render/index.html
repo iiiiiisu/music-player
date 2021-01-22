@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>音乐播放器</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="./index.css"
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <audio id="audio">不支持播放音乐</audio>
+            <button id="btn_add">添加音乐</button>
+        </header>
+        <main>
+            <table class="songs">
+                <!-- <thead>
+                    <tr>
+                        <th></th>
+                        <th>歌名</th>
+                        <th>歌手</th>
+                        <th>专辑</th>
+                        <th>时长</th>
+                    </tr>
+                </thead> -->
+                <tbody>
+                </tbody>
+            </table>
+        </main>
+        <footer>
+            <div class="btn-icon-group">
+                <button id="btn_pre_song" class="btn-icon"><i class="fa fa-step-backward"></i></button>
+                <button id="btn_play" class="btn-icon"><i class="fa fa-play"></i></button>
+                <button id="btn_pause" class="btn-icon"><i class="fa fa-pause"></i></button>
+                <button id="btn_next_song" class="btn-icon"><i class="fa fa-step-forward"></i></button>
+            </div>
+            <div id="progress_bar">
+                <progress id="progress" value="0" max="100"></progress>
+                <div id="progress_slider"></div>
+            </div>
+            <div class="btn-icon-group">
+                <button id="btn_volume" class="btn-icon" style="position: relative;">
+                    <i class="fa fa-volume-up"></i>
+                    <div id="volume_bar">
+                        <progress id="volume" value="0" max="100"></progress>
+                        <span id="volume_value"></span>
+                        <div id="volume_slider"></div>
+                    </div>
+                </button>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
