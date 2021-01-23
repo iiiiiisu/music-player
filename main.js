@@ -2,6 +2,13 @@ const { ipcMain } = require('electron')
 const { app, BrowserWindow } = require('electron')
 let fs = require("fs")
 
+fs.stat('./data', (err, stats)=>{
+  if(err){
+    fs.mkdir('./data', (err)=>{
+      console.log(err)
+    })
+  }
+})
 let config = {}
 fs.readFile("data/config.json", (err, arg) => {
   if (err) {
@@ -15,6 +22,8 @@ function createWindow() {
   const win = new BrowserWindow({
     width: 800,
     height: 600,
+    minWidth: 530,
+    minHeight: 250,
     webPreferences: {
       nodeIntegration: true,
       enableRemoteModule:true
