@@ -20,14 +20,23 @@ header {
 
 main {
     flex-grow: 1;
+    flex-shrink: 1;
+    overflow-y: scroll;
+    margin-bottom: 68px;
 }
 
 footer {
     display: flex;
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    bottom: 0px;
     flex-shrink: 0;
     align-items: center;
     padding: 8px 15px;
-    box-shadow: #eeeeee 10px 2px 0px 0px;
+    border-top: 1px solid #eeeeee;
+    box-sizing: border-box;
+    background-color: #ffffff;
 }
 
 button:focus {
@@ -73,52 +82,57 @@ button:focus {
     margin-right: 10px;
 }
 
-#progress_bar {
-    position: relative;
-    flex-grow: 1;
+#current_song_cover {
+    width: 50px;
+    height: 50px;
     margin-right: 10px;
-    height: 24px;
 }
 
-#progress {
+#song_cover {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #eeeeee;
+    border-radius: 3px;
+}
+
+#current_song_info {
+    margin-right: 10px;
+    width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.progress-box {
+    position: relative;
+    height: 30px;
+}
+
+.progress-box progress {
     width: 100%;
     height: 10px;
 }
 
-#volume_bar {
+.progress-box div.slider {
+    position: absolute;
+    left: -5.5px;
+    top: 9.5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: blue;
+}
+
+.volume-box {
     display: none;
     align-items: center;
     position: absolute;
     bottom: 50px;
-    right: 0px;
+    right: 20px;
     height: 36px;
-    width: 120px;
     padding: 5px 16px;
     outline: 1px solid #eeeeee;
-}
-
-#volume {
-    margin-right: 12px;
-}
-
-#volume_slider {
-    position: absolute;
-    left: 10px;
-    top: 16px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: blue;
-}
-
-#progress_slider {
-    position: absolute;
-    left: -6px;
-    top: 10px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: blue;
 }
 
 table.songs {

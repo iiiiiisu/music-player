@@ -31,25 +31,34 @@
             </table>
         </main>
         <footer>
+            <div id="current_song_cover">
+                <img id="song_cover" />
+            </div>
+            <div id="current_song_info">
+                <span id="song_name" style="font-weight: 500;font-size: 16px;"></span><br/>
+                <span id="song_artist" style="font-size: 12px;"></span>
+            </div>
             <div class="btn-icon-group">
                 <button id="btn_pre_song" class="btn-icon"><i class="fa fa-step-backward"></i></button>
                 <button id="btn_play" class="btn-icon"><i class="fa fa-play"></i></button>
                 <button id="btn_pause" class="btn-icon"><i class="fa fa-pause"></i></button>
                 <button id="btn_next_song" class="btn-icon"><i class="fa fa-step-forward"></i></button>
             </div>
-            <div id="progress_bar">
-                <progress id="progress" value="0" max="100"></progress>
-                <div id="progress_slider"></div>
+            <div id="audio_progress_box" class="progress-box" style="flex-grow: 1;margin-right: 10px;">
+                <progress id="audio_progress" value="0" max="100"></progress>
+                <div id="audio_slider" class="slider"></div>
             </div>
             <div class="btn-icon-group">
-                <button id="btn_volume" class="btn-icon" style="position: relative;">
+                <button id="btn_volume" class="btn-icon">
                     <i class="fa fa-volume-up"></i>
-                    <div id="volume_bar">
-                        <progress id="volume" value="0" max="100"></progress>
-                        <span id="volume_value"></span>
-                        <div id="volume_slider"></div>
-                    </div>
                 </button>
+                <div class="volume-box" show="false">
+                    <div id="volume_progress_box" class="progress-box" style="flex-grow: 1">
+                        <progress id="volume_progress" value="0" max="100" style="width: 100px"></progress>
+                        <div id="volume_slider" class="slider"></div>
+                    </div>
+                    <span id="volume_value" style="margin-left: 10px;user-select: none;"></span>
+                </div>
             </div>
         </footer>
 
